@@ -9,7 +9,12 @@ package grid
 //
 // TODO
 func Row(cells [][]string, index int) []string {
-	return nil
+	output := make([]string, len(cells[index]))
+	for i := range len(cells[index]) {
+		output[i] = cells[index][i]
+	}
+
+	return output
 }
 
 // Col erwartet ein Spielfeld und die Nummer `index` einer Spalte
@@ -17,7 +22,13 @@ func Row(cells [][]string, index int) []string {
 //
 // TODO
 func Col(cells [][]string, index int) []string {
-	return nil
+	output := make([]string, len(cells))
+
+	for i := range len(cells) {
+		output[i] = cells[i][index]
+	}
+
+	return output
 }
 
 // Diagonal erwartet ein Spielfeld und liefert die Diagonale von links oben
@@ -26,7 +37,13 @@ func Col(cells [][]string, index int) []string {
 //
 // TODO
 func Diagonal(cells [][]string) []string {
-	return nil
+	output := make([]string, len(cells))
+
+	for i := range len(cells) {
+		output[i] = cells[i][i]
+	}
+
+	return output
 }
 
 // AntiDiagonal erwartet ein Spielfeld und liefert die Diagonale von rechts oben
@@ -35,5 +52,11 @@ func Diagonal(cells [][]string) []string {
 //
 // TODO
 func AntiDiagonal(cells [][]string) []string {
-	return nil
+	output := make([]string, len(cells))
+
+	for i := range len(cells) {
+		output[i] = cells[i][len(cells[0])-1-i]
+	}
+
+	return output
 }
