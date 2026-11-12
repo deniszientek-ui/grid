@@ -10,7 +10,18 @@ package grid
 //
 // TODO
 func AllEqual(line []string, value string) bool {
-	return false
+
+	richtig := true
+
+	for i := range len(line) {
+		if line[i] == value {
+			richtig = true
+		} else {
+			return false
+		}
+	}
+
+	return richtig
 }
 
 // Contains erwartet ein Spielfeld und einen Wert und liefert `true`,
