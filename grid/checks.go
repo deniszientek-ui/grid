@@ -29,5 +29,13 @@ func AllEqual(line []string, value string) bool {
 //
 // TODO
 func Contains(cells [][]string, value string) bool {
+
+	for _, row := range cells {
+		for _, cell := range row {
+			if cell == value {
+				return true
+			}
+		}
+	}
 	return false
 }
