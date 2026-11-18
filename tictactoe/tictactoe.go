@@ -23,7 +23,20 @@ const Empty = "."
 //
 // TODO
 func NewBoard() [][]string {
-	return nil
+
+	Spielfeld := [][]string{}
+
+	for i := 0; 3 > i; i++ {
+
+		Spielfeld = append(Spielfeld, []string{})
+
+		for n := 0; 3 > n; n++ {
+
+			Spielfeld[i] = append(Spielfeld[i], Empty)
+		}
+
+	}
+	return Spielfeld
 }
 
 // Place erwartet ein Spielfeld, die Nummer `field` eines Felds von `1` bis `9`
@@ -41,7 +54,14 @@ func Place(cells [][]string, field int, player string) bool {
 //
 // TODO
 func NextPlayer(player string) string {
-	return ""
+	if player == "O" {
+		player := "X"
+		return player
+	} else {
+		player := "O"
+		return player
+	}
+
 }
 
 // Wins erwartet ein Spielfeld und ein Symbol und liefert `true`, wenn eine
