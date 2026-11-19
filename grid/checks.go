@@ -1,5 +1,7 @@
 package grid
 
+import "slices"
+
 // Diese Aufgaben prüfen eine Linie oder das ganze Spielfeld auf einen Wert,
 // z. B. ob eine Zeile nur ein bestimmtes Symbol enthält
 // oder ob noch ein Feld frei ist.
@@ -31,6 +33,12 @@ func AllEqual(line []string, value string) bool {
 func Contains(cells [][]string, value string) bool {
 
 	for _, row := range cells {
+
+		// Simpler mit slices aber tech gleich
+		if slices.Contains(row, value) {
+			return true
+		}
+
 		for _, cell := range row {
 			if cell == value {
 				return true
