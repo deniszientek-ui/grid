@@ -9,10 +9,18 @@ package grid
 //
 // TODO
 func Row(cells [][]string, index int) []string {
+
 	output := make([]string, len(cells[index]))
-	for i := range len(cells[index]) {
-		output[i] = cells[index][i]
-	}
+
+	// Kopiert einen String in Golang
+	copy(output, cells[index])
+
+	// Oder:
+	/*
+		for i := range len(cells[index]) {
+			output[i] = cells[index][i]
+		}
+	*/
 
 	return output
 }

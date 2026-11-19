@@ -13,15 +13,15 @@ package grid
 //
 // TODO
 func New(rows, cols int, value string) [][]string {
-
+	// Ein leeres Grid erzeugen
 	Spielfeld := [][]string{}
 
+	// Die Zeilen erzeugen
 	for i := 0; i < rows; i++ {
 
 		Spielfeld = append(Spielfeld, []string{})
 
 		for n := 0; n < cols; n++ {
-
 			Spielfeld[i] = append(Spielfeld[i], value)
 		}
 
@@ -41,7 +41,8 @@ func Rows(cells [][]string) int {
 //
 // TODO
 func Cols(cells [][]string) int {
-	if len(cells) == 0 {
+	// len geht auch aber Rows macht das bereits in der Funktion vorher
+	if Rows(cells) == 0 {
 		return 0
 	} else {
 
@@ -73,6 +74,8 @@ func Set(cells [][]string, row, col int, value string) {
 // TODO
 func Format(cells [][]string) string {
 	ausgabe := ""
+
+	// Alle Zeilen ausgeben
 	for i := range len(cells) {
 		for j := range len(cells[i]) {
 
